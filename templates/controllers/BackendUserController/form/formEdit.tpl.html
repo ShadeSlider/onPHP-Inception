@@ -1,0 +1,116 @@
+<?php
+/** @var FormHelper $formHelper */
+?>
+<form action="<?= $currentUrl ?>" method="post" class="form-horizontal" id="mainForm">
+	<fieldset>
+		<div class="row-fluid text-right <?= $actionName == 'list' ? 'hide' : ''?>">
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="<?= $defaultActionUrl ?>" class="btn">Cancel</a>
+		</div>
+		<? if (count($formHelper->getFieldsErrors())): ?>
+			<h4 class="text-error well well-small well-plain alert-error">Some fields contain errors</h4>
+		<? endif ?>
+		<div class="row-fluid">
+			<div class="border-bottom border-bottom-dashed"><span class="required-label">*</span> - mandatory fields</div>
+		</div>
+		<div class="spacer height30"></div>
+		<div class="row-fluid">
+			<div class="span6">
+				<div class="control-group">
+					<label>
+						<p>Login<span class="required-label">*</span></p>
+						<?= $formHelper->makeTextInput('login') ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>Password</p>
+						<?= $formHelper->getFieldError('passwordMismatch') ?>
+						<?= $formHelper->makePasswordInput('password', array('value' => '')) ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>Password confirm</p>
+						<?= $formHelper->makePasswordInput('passwordConfirm', array('value' => '')) ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>First Name</p>
+						<?= $formHelper->makeTextInput('firstName') ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>Last Name</p>
+						<?= $formHelper->makeTextInput('lastName') ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>Middle Name</p>
+						<?= $formHelper->makeTextInput('middleName') ?>
+					</label>
+				</div>
+			</div>
+			<div class="span6">
+				<div class="control-group">
+					<label>
+						<p>E-mail</p>
+						<?= $formHelper->makeTextInput('email') ?>
+					</label>
+				</div>
+
+				<div class="control-group">
+					<label>
+						<p>Mobile Phone</p>
+						<?= $formHelper->makeTextInput('mobilePhone', array('class' => 'phone')) ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>Work Phone</p>
+						<?= $formHelper->makeTextInput('workPhone', array('class' => 'phone')) ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>Gender</p>
+						<?= $formHelper->makeSelect('gender', array('u' => '', 'm' => 'Male', 'f' => 'Female')) ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>Comment</p>
+						<?= $formHelper->makeTextarea('textShort', array('rows' => 5, 'class' => 'width300')) ?>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>
+							<?= $formHelper->makeCheckboxInput('isActive', array(), array('checked' => 'true')) ?>
+							Is Active?
+						</p>
+					</label>
+				</div>
+				<div class="control-group">
+					<label>
+						<p>
+							<?= $formHelper->makeCheckboxInput('isVisible', array(), array('checked' => 'true')) ?>
+							Is Visible?
+						</p>
+					</label>
+				</div>
+			</div>
+		</div>
+		<div class="row-fluid text-right <?= $actionName == 'list' ? 'hide' : ''?>">
+			<button type="submit" class="btn btn-primary">Save</button>
+			<a href="<?= $defaultActionUrl ?>" class="btn">Cancel</a>
+		</div>
+		<? if ($form->exists('id') && $form->getValue('id')): ?>
+			<?= $formHelper->makeHiddenInput('id') ?>
+		<? endif ?>
+		<input type="hidden" name="action" value="<?= ($form->exists('id') && $form->getValue('id')) ? 'update' : 'create' ?>">
+	</fieldset>
+</form>

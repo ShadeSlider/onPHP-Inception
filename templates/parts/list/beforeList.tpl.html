@@ -1,0 +1,11 @@
+<div class="row-fluid">
+	<div class="span12">
+		<div class="btn-group pull-right">
+			<a href="<?= $currentActionUrl ?>" class="btn resetSearch">Reset search</a>
+			<? if (!empty($controllerMetaData['createAtListAction']) && $partViewer->partExists('form/formEdit')): ?>
+				<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalAddObject"><?= $controllerMetaData['titleCreate'] ?></button>
+			<? endif ?>
+		</div>
+		<div class="spacer height10"></div>
+	</div>
+</div>

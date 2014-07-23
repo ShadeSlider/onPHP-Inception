@@ -1,0 +1,6 @@
+<td>
+	<div class="width85">
+		<a href="<?= $ui->url('entity', array(SYSTEM_CONTROLLER_VAR_NAME => $entityNameDashed, 'action' => 'edit')) ?>?id=<?= $entity->getId() ?>" class="btn btn-small"><i class="icon-edit"></i></a>
+		<a href="<?= $ui->url('entity', array(SYSTEM_CONTROLLER_VAR_NAME => $entityNameDashed, 'action' => 'delete')) ?>?id=<?= $entity->getId() ?>" class="btn btn-small btn-danger delete-entity"><i class="icon-remove"></i></a>
+	</div>
+</td>

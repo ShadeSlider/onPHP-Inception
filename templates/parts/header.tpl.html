@@ -1,0 +1,104 @@
+<?php
+/** @var HtmlUI $ui */
+?>
+<!DOCTYPE html>
+<html>
+<head>
+	<title><?= $metaData->getTitle() ?></title>
+	<meta name="keywords" content="<?= $metaData->getKeywords() ?>" />
+	<meta name="description" content="<?= $metaData->getDescription() ?>" />
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+	<script type="application/javascript" src="<?= $ui->js('jquery-2.0.0.js') ?>"></script>
+	<script type="application/javascript" src="<?= $ui->file('external/bootstrap/js/bootstrap.js') ?>" ></script>
+	<script type="application/javascript" src="<?= $ui->file('external/bootstrap/js/bootstrap-datetimepicker.min.js') ?>" ></script>
+	<script type="application/javascript" src="<?= $ui->file('external/bootstrap/js/bootstrap-datepicker.ru.js') ?>" ></script>
+
+	<script type="application/javascript" src="<?= $ui->js('jquery.extensions.js') ?>" ></script>
+	<script type="application/javascript" src="<?= $ui->js('inception.js') ?>" ></script>
+
+	<link type="text/css" rel="stylesheet" href="<?= $ui->file('external/bootstrap/css/bootstrap.css') ?>">
+	<link type="text/css" rel="stylesheet" href="<?= $ui->file('external/bootstrap/css/bootstrap-datetimepicker.min.css') ?>">
+	<link type="text/css" rel="stylesheet" href="<?= $ui->css('inception.css') ?>">
+</head>
+<body>
+<!-- WRAPPER -->
+<div id="wrapper" class="<?= $controllerNameDashed ?> <?= $controllerNameDashed ?>-<?= $controllerActionName ?>">
+	<!-- Top Nav Bar -->
+	<div class="navbar navbar-inverse navbar-fixed-top navbar-top">
+		<div class="navbar-inner">
+			<div class="container">
+				<a class="brand" href="<?= PATH_WEB ?>">onPHP Inception</a>
+				<div class="nav-collapse collapse">
+					<ul class="nav nav-pills">
+						<? if ($ui->isAuthenticatedUser()): ?>
+						<!-- Classifiers -->
+						<li class="dropdown">
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">Classifier <b class="caret"></b></a>
+							<ul class="dropdown-menu">
+								<li>
+									<? if ($ui->canAccess('employee')): ?>
+										<a href="<?= $ui->controllerUrl('employee') ?>">Employees</a>
+									<? endif ?>
+
+									<div class="divider"></div>
+
+									<? if ($ui->canAccess('backend-user')): ?>
+										<a href="<?= $ui->controllerUrl('backend-user') ?>">Backend Users</a>
+									<? endif ?>
+								</li>
+							</ul>
+						</li>
+						<? endif ?>
+						<!-- @END Classifiers -->
+					</ul>
+				</div>
+
+				<? if ($ui->isAuthenticatedUser()): ?>
+				<div class="user-block pull-right">
+					<span class="label label-plain"><?= $loggedInUser->getDisplayName() ?></span>
+					<a href="<?= $ui->controllerUrl('logout') ?>" class="btn btn-mini btn-danger">Logout</a>
+				</div>
+				<form class="navbar-form pull-right form-search">
+					<div class="input-append">
+						<i class="icon-zoom-in"></i>
+						<input data-provide="typeahead" data-items="4" type="text" class="span2 search-query">
+						<button class="btn">Search</button>
+					</div>
+				</form>
+				<? else: ?>
+					<div class="user-block pull-right login-small">
+						<form action="<?= $ui->controllerUrl('login') ?>" method="POST">
+							<input type="text" name="login" class="small" placeholder="Login..."/>
+							<input type="password" name="password" placeholder="Password..."/>
+							<button class="btn btn-mini btn-danger" type="submit">Log In</button>
+							<input type="hidden" name="action" value="login"/>
+						</form>
+					</div>
+				<? endif ?>
+			</div>
+		</div>
+	</div>
+	<!-- @END Top Nav Bar -->
+
+
+	<div class="container" id="main-container">
+		<!-- BreadCrumbs -->
+		<? if (!empty($breadCrumbs)): ?>
+			<?php
+			$last = end($breadCrumbs);
+			?>
+			<ul class="breadcrumb">
+				<li><a href="/">Home</a></li>
+				<? foreach ($breadCrumbs as $crumb): ?>
+					<li class="<?= $crumb == $last ? 'active' : '' ?>"><span class="divider">/</span>
+						<? if (!empty($crumb['route'])): ?>
+							<a href="<?= $ui->url($crumb['route']['name'], $crumb['route']['params']) ?>"><?= $crumb['title'] ?></a>
+						<? else: ?>
+							<?= $crumb['title'] ?>
+						<? endif ?>
+					</li>
+				<? endforeach ?>
+			</ul>
+		<? endif ?>
+		<!-- @END BreadCrumbs -->
+		<div class="row-fluid">

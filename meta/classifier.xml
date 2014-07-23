@@ -1,0 +1,25 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+
+        <!-- Employee -->
+        <class name="Employee" extends="BaseEntityWithTexts">
+            <properties>
+                <property   name="email"                type="String"   size="255"                                              unique="true"       />
+                <property   name="firstName"            type="String"   size="255"                          required="true"     index="full_name"   />
+                <property   name="lastName"             type="String"   size="255"                          required="true"     index="full_name"   />
+                <property   name="middleName"           type="String"   size="255"                                              index="full_name"   />
+                <property   name="mobilePhone"          type="String"   size="255"                                              index="true"        />
+                <property   name="workPhone"            type="String"   size="255"                                                                  />
+                <property 	name="gender"               type="String"   size="1"       default="u"                                                  />
+                <property   name="position"             type="String"   size="255"                                                                  />
+
+                <property 	name="birthDate"            type="Date"                                                             index="true"        />
+            </properties>
+            <pattern name="StraightMapping"/>
+        </class>
+        <!-- @end Employee -->
+
+    </classes>
+</metaconfiguration>

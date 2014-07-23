@@ -1,0 +1,9 @@
+.idea/
+vendor/**
+tests/cases/acceptance/screenshots/
+externals/**
+exchange/**
+!externals/README
+www/stuff.php
+scratchpad/
+composer.lock

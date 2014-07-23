@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <classes>
+        <!--////////////////////////////////////////////////////////////////////////////-->
+        <!--////////////////////////////////// RBAC ////////////////////////////////////-->
+        <!--////////////////////////////////////////////////////////////////////////////-->
+        <!-- BackendUser -->
+        <class name="BackendUser" extends="BaseEntity">
+            <properties>
+                <property   name="email"                type="String"                       size="255"                          required="true"             />
+                <property   name="login"                type="String"                       size="255"                          required="true"             />
+                <property   name="password"             type="String"                       size="32"                           required="true"             />
+
+                <property   name="lastName"             type="String"                       size="255"                                                      />
+                <property   name="firstName"            type="String"                       size="255"                                                      />
+                <property   name="midName"              type="String"                       size="255"                                                      />
+                <property   name="mobilePhone"          type="String"                       size="255"                                                      />
+                <property   name="workPhone"            type="String"                       size="255"                                                      />
+                <property 	name="gender"               type="String"                       size="1"        default="u"                                     />
+
+                <property   name="textShort"            type="String"                       size="65536"                                                    />
+                <property   name="text"                 type="String"                       size="65536"                                                    />
+
+                <property   name="isSuperAdmin"     	type="Boolean"    			                        default="false"                                 />
+
+                <!-- Collections -->
+                <property name="accessRoles"            type="BackendUserRole"                              relation="ManyToMany"                           />
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+        <!-- @end BackendUser -->
+
+        <!-- BackendUserRole -->
+        <class name="BackendUserRole" extends="BaseEntity">
+            <properties>
+                <property   name="parent"               type="BackendUserRole"                              relation="OneToOne"                             />
+
+                <property   name="name"                 type="String"                       size="255"                          required="true"             />
+                <property   name="title"                type="String"                       size="255"                          required="true"           default=""  />
+                <!-- Collections -->
+                <property   name="permissions"          type="BackendAccessResource"                        relation="ManyToMany"                           />
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+        <!-- @end BackendUserRole -->
+
+        <!-- BackendAccessResource -->
+        <class name="BackendAccessResource" extends="BaseEntity">
+            <properties>
+                <property   name="parent"               type="BackendAccessResource"                        relation="OneToOne"                             />
+                <property   name="type"                 type="EnumBackendAccessResourceType"                relation="OneToOne" required="true"             />
+
+                <property   name="name"                 type="String"                       size="255"                          required="true"             />
+                <property   name="title"                type="String"                       size="255"                          required="true"             />
+            </properties>
+            <pattern name="StraightMapping" />
+        </class>
+        <!-- @end BackendAccessResource -->
+
+        <!-- EnumBackendAccessResourceType -->
+        <class name="EnumBackendAccessResourceType">
+            <properties>
+                <identifier name="id" />
+            </properties>
+            <pattern name="EnumClass" />
+        </class>
+        <!-- @end EnumBackendAccessResourceType -->
+    </classes>
+</metaconfiguration>

@@ -1,0 +1,9 @@
+<? $partViewer->view('parts/header') ?>
+<? $partViewer->view('parts/left-column') ?>
+	<!-- MAIN CONTENT -->
+	<div class="span9" id="main-content">
+		<div class="page-header"><h1><?= $pageTitle ?></h1></div>
+		<? $partViewer->view('form/formEdit') ?>
+	</div>
+	<!-- @END MAIN CONTENT -->
+<? $partViewer->view('parts/footer') ?>

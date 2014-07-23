@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <controllers>
+        <!-- BackendUser -->
+        <controller name="BackendUser">
+            <title>Backend Users</title>
+            <titleList>List of Backend Users</titleList>
+            <titleCreate>Create Backend User</titleCreate>
+            <titleEdit>Edit Backend User</titleEdit>
+            <messageCreated>Backend User created</messageCreated>
+            <messageUpdated>Backend User updated</messageUpdated>
+            <messageDeleted>Backend User deleted</messageDeleted>
+
+            <createAtListAction>1</createAtListAction>
+
+            <breadCrumbs>
+                <node>
+                    <title>Classifier</title>
+                </node>
+                <node>
+                    <title>Backend Users</title>
+                    <route>
+                        <name>entity</name>
+                        <params>
+                            <param>
+                                <name>controller</name>
+                                <value>backend-user</value>
+                            </param>
+                        </params>
+                    </route>
+                </node>
+            </breadCrumbs>
+            <listColumns>
+                <column>
+                    <name>id</name>
+                    <title>#</title>
+                    <width>40px</width>
+                </column>
+                <column>
+                    <name>firstName</name>
+                    <title>First Name</title>
+                    <width>120px</width>
+                </column>
+                <column>
+                    <name>lastName</name>
+                    <title>Last Name</title>
+                    <width>120px</width>
+                </column>
+                <column>
+                    <name>email</name>
+                    <title>E-mail</title>
+                    <width>150px</width>
+                </column>
+                <column>
+                    <name>login</name>
+                    <title>Login</title>
+                    <width>100px</width>
+                </column>
+                <column>
+                    <name>accessRoles</name>
+                    <title>Roles</title>
+                    <width>150px</width>
+                    <searchSkip>1</searchSkip>
+                    <displayList>title</displayList>
+                </column>
+            </listColumns>
+        </controller>
+        <!-- @end BackendUser -->
+    </controllers>
+</metadata>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <controllers>
+        <!-- Auth -->
+        <controller name="Auth">
+            <title>Authorization</title>
+        </controller>
+        <!-- @end Auth -->
+    </controllers>
+</metadata>

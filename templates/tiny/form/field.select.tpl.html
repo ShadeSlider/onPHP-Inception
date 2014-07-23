@@ -1,0 +1,5 @@
+<select class="text search-query span12 <?= $class ?>" name="<?= $name ?>"  <?= isset($id) ? 'id="'.$id.'"' : '' ?>>
+	<? foreach ($selectValues as $optValue => $optTitle): ?>
+		<option value="<?= $optValue ?>" <?= $optValue == $value ? 'selected' : '' ?>><?= $optTitle ?></option>
+	<? endforeach ?>
+</select>

@@ -1,0 +1,70 @@
+<?xml version="1.0"?>
+<!DOCTYPE metaconfiguration SYSTEM "meta.dtd">
+<metaconfiguration>
+    <include file="rbac.xml"/>
+    <include file="classifier.xml" />
+
+    <classes>
+        <!-- BaseStorable -->
+        <class name="BaseStorable">
+            <properties>
+                <identifier type="Integer" />
+            </properties>
+            <pattern name="AbstractClass" />
+        </class>
+        <!-- @end BaseStorable -->
+
+
+        <!-- BaseEntity -->
+        <class name="BaseEntity" extends="BaseStorable">
+            <properties>
+                <property 	name="createdAt"            type="TimestampTZ"                                                                                  />
+                <property 	name="updatedAt"            type="TimestampTZ"                                                                                  />
+                <property 	name="deletedAt"            type="TimestampTZ"                                                                                  />
+
+                <property   name="displayOrder"        	type="Integer"                                      default="0"                                     />
+
+                <property   name="isActive"             type="Boolean"    			                        default="true"                                  />
+                <property   name="isVisible"			type="Boolean"    			                        default="true"                                  />
+                <property   name="isDeleted"    		type="Boolean"    		                            default="false"                                 />
+            </properties>
+            <pattern name="AbstractClass" />
+        </class>
+        <!-- @end BaseEntity -->
+
+
+        <!-- BaseEntityWithTexts -->
+        <class name="BaseEntityWithTexts" extends="BaseEntity">
+            <properties>
+                <property   name="textShort"            type="String"                       size="2048"                                                    />
+                <property   name="text"                 type="String"                       size="2048"                                                    />
+            </properties>
+            <pattern name="AbstractClass" />
+        </class>
+        <!-- @end BaseEntityWithTexts -->
+
+
+        <!-- BaseNonEntity -->
+        <class name="BaseNonEntity" extends="BaseStorable">
+            <properties>
+                <property 	name="createdAt"            type="TimestampTZ"                                                                                  />
+                <property 	name="updatedAt"            type="TimestampTZ"                                                                                  />
+                <property 	name="deletedAt"            type="TimestampTZ"                                                                                  />
+            </properties>
+            <pattern name="AbstractClass" />
+        </class>
+        <!-- @end BaseNonEntity -->
+
+
+        <!-- BaseNonEntityWithTexts -->
+        <class name="BaseNonEntityWithTexts" extends="BaseNonEntity">
+            <properties>
+                <property   name="textShort"            type="String"                       size="2048"                                                    />
+                <property   name="text"                 type="String"                       size="2048"                                                    />
+            </properties>
+            <pattern name="AbstractClass" />
+        </class>
+        <!-- @end BaseNonEntityWithTexts -->
+
+    </classes>
+</metaconfiguration>

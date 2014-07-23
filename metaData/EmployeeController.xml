@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+    <controllers>
+        <!-- Employee -->
+        <controller name="Employee">
+            <title>Employees</title>
+            <titleList>List of Employees</titleList>
+            <titleCreate>Create Employee</titleCreate>
+            <titleEdit>Edit Employee</titleEdit>
+            <messageCreated>Employee created</messageCreated>
+            <messageUpdated>Employee updated</messageUpdated>
+            <messageDeleted>Employee deleted</messageDeleted>
+
+            <createAtListAction>1</createAtListAction>
+
+            <breadCrumbs>
+                <node>
+                    <title>Classifier</title>
+                </node>
+                <node>
+                    <title>Employees</title>
+                    <route>
+                        <name>entity</name>
+                        <params>
+                            <param>
+                                <name>controller</name>
+                                <value>employee</value>
+                            </param>
+                        </params>
+                    </route>
+                </node>
+            </breadCrumbs>
+            <listColumns>
+                <column>
+                    <name>id</name>
+                    <title>#</title>
+                    <width>30px</width>
+                </column>
+                <column>
+                    <name>firstName</name>
+                    <title>First Name</title>
+                    <width>80px</width>
+                </column>
+                <column>
+                    <name>lastName</name>
+                    <title>Last Name</title>
+                    <width>100px</width>
+                </column>
+                <column>
+                    <name>position</name>
+                    <title>Position</title>
+                    <width>200px</width>
+                </column>
+                <column>
+                    <name>email</name>
+                    <title>E-mail</title>
+                    <width>160px</width>
+                </column>
+                <column>
+                    <name>mobilePhone</name>
+                    <title>Phone</title>
+                    <width>120px</width>
+                </column>
+            </listColumns>
+        </controller>
+        <!-- @end Employee -->
+    </controllers>
+</metadata>

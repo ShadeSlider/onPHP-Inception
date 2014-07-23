@@ -1,0 +1,34 @@
+<?php
+/** @var FormHelper $formHelper */
+?>
+<? $partViewer->view('parts/header') ?>
+	<!-- MAIN CONTENT -->
+	<div class="span12" id="main-content">
+		<div class="page-header"><h1><?= $pageTitle ?></h1></div>
+		<form action="<?= $ui->controllerUrl('login') ?>" method="POST" class="form-horizontal" id="mainForm">
+			<?= $formHelper->getFieldError('userExists') ?>
+			<div class="control-group">
+				<label class="control-label" for="inputLogin">Login / E-mail</label>
+				<div class="controls">
+					<?= $formHelper->makeTextInput('login', array('id' => 'inputLogin')) ?>
+				</div>
+			</div>
+			<div class="control-group">
+				<label class="control-label" for="inputPassword">Password</label>
+				<div class="controls">
+					<?= $formHelper->makePasswordInput('password', array('id' => 'inputPassword')) ?>
+				</div>
+			</div>
+			<div class="control-group">
+				<div class="controls">
+					<label class="checkbox">
+						<?= $formHelper->makeCheckboxInput('remember', array('value' => 1, 'style' => 'margin-top: 0;')) ?> Remember me
+					</label>
+					<button type="submit" class="btn">Log In</button>
+				</div>
+			</div>
+			<input type="hidden" name="action" value="login"/>
+		</form>
+	</div>
+	<!-- @END MAIN CONTENT -->
+<? $partViewer->view('parts/footer') ?>

@@ -1,0 +1,75 @@
+<?php
+$currentPage		= $this->getCurrentPage();
+$elemPerPage		= $this->getElementPerPage();
+$totalPages			= $this->getTotalPage();
+$beginPageInterval	= $this->handler->getBeginPageInterval();
+$endPageInterval 	= $this->handler->getEndPageInterval();
+$currentInterval	= $this->handler->getCurrentInterval();
+$deltaPage			= $this->getDeltaPage();
+$totalInterval		= $this->handler->getTotalInterval();
+?>
+<div class="pagination text-center">
+	<ul>
+		<?
+		if ($currentPage != 1) {
+			?>
+			<li>
+				<a href="<?=$this->getHrefByStartElement(0)?>" offset="0"><span>&lt;&lt;</span></a>
+			</li>
+			<li>
+				<a href="<?=$this->getHrefByStartElement($elemPerPage * ($currentPage - 2))?>" offset="<?= $elemPerPage * ($currentPage - 2) ?>"><span>&lt;</span></a>
+			</li>
+		<?
+		} else {
+			?>
+			<li>
+				<span>&lt;&lt;</span>
+			</li>
+			<li>
+				<span>&lt;</span>
+			</li>
+		<?
+		}
+		?>
+		<?
+		for ($i=$beginPageInterval; ($i<=$endPageInterval) && ($i<=$totalPages); $i++) {
+			if ($i == $currentPage) {
+				?>
+				<li class="active">
+					<span><?= $i ?></span>
+				</li>
+			<?
+			} else {
+				?>
+				<li>
+					<a href="<?=$this->getHrefByStartElement($elemPerPage * ($i-1))?>" offset="<?= $elemPerPage * ($i-1) ?>"><span><?=$i?></span></a>
+				</li>
+			<?
+			}
+			?>
+		<?
+		}
+		?>
+		<?
+		if ($currentPage < $totalPages) {
+			?>
+			<li>
+				<a href="<?=$this->getHrefByStartElement($elemPerPage * $currentPage);?>" offset="<?= $elemPerPage * $currentPage ?>"><span>&gt;</span></a>
+			</li>
+			<li>
+				<a href="<?=$this->getHrefByStartElement($elemPerPage * ($totalPages - 1))?>" offset="<?= $elemPerPage * ($totalPages - 1) ?>"><span>&gt;&gt;</span></a>
+			</li>
+		<?
+		} else {
+			?>
+			<li>
+				<span>&gt;&gt;</span>
+			</li>
+			<li>
+				<span>&gt;</span>
+			</li>
+		<?
+		}
+		?>
+	</ul>
+</div>
