@@ -48,3 +48,19 @@ For help installing and configuring **Composer** see [this page](https://getcomp
 $ cd ../
 $ composer.phar install
 ```
+
+Installation is complete.
+
+#Setting Up
+
+1. Set up web server
+2. Set up production PostgreSQL database
+3. Set up PostgreSQL database running tests, unless you don't plan to use any tests other than unit tests.
+4. Go to **./config** directory and edit **const.dev.inc.php** file. Names of constants are self-explanatory.
+5. Go to **./tests** directory and edit **config.tests.inc.php** file.
+6. Go to project root directory and run meta builder to make sure everything is in order: 
+```bash
+$ sh build-meta.sh
+```
+If everything was set up correctly, meta builder should run without an error.
+Congratulation! You are all done!
