@@ -16,6 +16,7 @@ You should explore those classes to fully grasp all of the **onPHP Inception** f
 
 #Main features
 - Extremely fast implementation of standard CRUD functionality
+- Out of the box [RBAC](http://en.wikipedia.org/wiki/Role-based_access_control) authorization system
 - Fully established testing environment
 - Many convenient helper classes and methods to ease the pain of writing code for some repetitive operations
 
