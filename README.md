@@ -31,15 +31,19 @@ $ cd onphp_inception;
 ```
 
 2\. Clone this repository:
-
-
 ```bash
 $ git clone https://github.com/ShadeSlider/onPHP-Inception.git .
 ```
 
-3\.  Move to **externals/** directory and clone **[onPHP Extended](https://github.com/ShadeSlider/onphp-framework.git)** repository.
-
+3\.  Move to **'./externals/'** directory and clone **[onPHP Extended](https://github.com/ShadeSlider/onphp-framework.git)** repository.
 ```bash
 $ cd ./externals
 $ git clone https://github.com/ShadeSlider/onPHP-Inception.git onphp-extended
+```
+
+4\. Move to project root directory and install dependancies.  
+For help installing and configuring **Composer** see [https://getcomposer.org/doc/00-intro.md#installation-nix]  
+```bash
+$ cd ../
+$ composer.phar install
 ```
