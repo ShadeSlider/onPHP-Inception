@@ -19,6 +19,27 @@ You should explore those classes to fully grasp all of the **onPHP Inception** f
 - Fully established testing enviroment
 - Many convenient helper classes and methods to ease the pain of writing code for some repetitive operations
 
-##Dependencies
+#Dependencies
 onPHP Inception uses a modified and extended [version of onPHP framework](https://github.com/ShadeSlider/onphp-framework).  
 It also relies on [Composer](https://getcomposer.org/) for test related packages.
+
+#Installation
+1\. Create a new project directory and move into it:
+```bash
+$ mkdir onphp_inception;
+$ cd onphp_inception;
+```
+
+2\. Clone this repository:
+
+
+```bash
+$ git clone https://github.com/ShadeSlider/onPHP-Inception.git .
+```
+
+3\.  Move to **externals/** directory and clone **[onPHP Extended](https://github.com/ShadeSlider/onphp-framework.git)** repository.
+
+```bash
+$ cd ./externals
+$ git clone https://github.com/ShadeSlider/onPHP-Inception.git onphp-extended
+```
