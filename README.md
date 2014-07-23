@@ -43,7 +43,7 @@ $ git clone https://github.com/ShadeSlider/onPHP-Inception.git onphp-extended
 ```
 
 4\. Move to project root directory and install dependencies.  
-For help installing and configuring **Composer** see [https://getcomposer.org/doc/00-intro.md#installation-nix]  
+For help installing and configuring **Composer** see [this page](https://getcomposer.org/doc/00-intro.md#installation-nix)
 ```bash
 $ cd ../
 $ composer.phar install
