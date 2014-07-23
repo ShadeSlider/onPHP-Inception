@@ -26,8 +26,8 @@ It also relies on [Composer](https://getcomposer.org/) for test related packages
 #Installation
 1\. Create a new project directory and move into it:
 ```bash
-$ mkdir onphp_inception;
-$ cd onphp_inception;
+$ mkdir onphp_inception
+$ cd ./onphp_inception
 ```
 
 2\. Clone this repository:
