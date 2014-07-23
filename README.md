@@ -16,7 +16,7 @@ You should explore those classes to fully grasp all of the **onPHP Inception** f
 
 #Main features
 - Extremely fast implementation of standard CRUD functionality
-- Fully established testing enviroment
+- Fully established testing environment
 - Many convenient helper classes and methods to ease the pain of writing code for some repetitive operations
 
 #Dependencies
@@ -41,7 +41,7 @@ $ cd ./externals
 $ git clone https://github.com/ShadeSlider/onPHP-Inception.git onphp-extended
 ```
 
-4\. Move to project root directory and install dependancies.  
+4\. Move to project root directory and install dependencies.  
 For help installing and configuring **Composer** see [https://getcomposer.org/doc/00-intro.md#installation-nix]  
 ```bash
 $ cd ../
