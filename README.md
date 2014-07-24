@@ -55,7 +55,7 @@ Installation is complete.
 
 1. Set up web server
 2. Set up production PostgreSQL database
-3. Set up PostgreSQL database running tests, unless you don't plan to use any tests other than unit tests.
+3. Set up PostgreSQL database for running tests, unless you don't plan to use any tests other than unit tests.
 4. Go to **./config** directory and edit **const.dev.inc.php** file. Names of constants are self-explanatory.
 5. Go to **./tests** directory and edit **config.tests.inc.php** file.
 6. Go to project root directory and run meta builder to make sure everything is in order: 
