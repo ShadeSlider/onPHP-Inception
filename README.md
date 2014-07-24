@@ -62,5 +62,5 @@ Installation is complete.
 ```bash
 $ sh build-meta.sh
 ```
-If everything was set up correctly, meta builder should run without an error.
+If everything was set up correctly, meta builder should run without an error.  
 Congratulation! You are all done!
